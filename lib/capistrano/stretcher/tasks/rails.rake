@@ -23,7 +23,7 @@ namespace :stretcher do
 
             raise PrecompileRequired unless latest_release
 
-            latest_release_path = local_build_path.join(latest_release)
+            latest_release_path = local_build_path.to_a.join(latest_release)
 
             execute :ls, latest_release_path.join('assets_manifest_backup') rescue raise(PrecompileRequired)
 
